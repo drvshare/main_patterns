@@ -1,27 +1,19 @@
 plugins {
-    kotlin("jvm") version "1.8.0"
-    application
+    kotlin("jvm") apply false
 }
 
-group = "ru.drvshare"
-version = "1.0-SNAPSHOT"
+group = "ru.drvshare.main_patterns"
+version = "0.0.1-SNAPSHOT"
 
+allprojects {
 repositories {
+        google()
     mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+}
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-
-kotlin {
-    jvmToolchain(8)
-}
-
-application {
-    mainClass.set("MainKt")
+subprojects {
+    group = rootProject.group
+    version = rootProject.version
 }
