@@ -44,10 +44,6 @@ class Test {
     fun `overflow`() {
         assertFailsWith<IllegalArgumentException>("b = +/-Infinity")
         {
-            solve(1.0, 1.0, 1.0)
-        }
-        assertFailsWith<IllegalArgumentException>("b = +/-Infinity")
-        {
             solve(1.0, Double.MAX_VALUE, 1.0)
         }
         assertFailsWith<IllegalArgumentException>("a = +/-Infinity")
